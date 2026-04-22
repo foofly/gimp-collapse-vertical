@@ -23,7 +23,7 @@ def collapse_vertical_run(procedure, run_mode, image, drawables, config, run_dat
             if img_height - y2 > 0:
                 image.select_rectangle(Gimp.ChannelOps.REPLACE,
                                        0, y2, img_width, img_height - y2)
-                drawable.edit_cut()
+                Gimp.edit_cut(drawable)
                 floating = Gimp.edit_paste(drawable, False)
                 floating.set_offsets(0, y1)
                 Gimp.floating_sel_anchor(floating)
