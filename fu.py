@@ -11,24 +11,30 @@ def collapse_vertical_run(procedure, run_mode, image, drawables, config, run_dat
 
     image.undo_group_start()
 
-    non_empty, x1, y1, x2, y2 = image.get_selection_bounds()
+    try:
+        non_empty, x1, y1, x2, y2 = image.get_selection_bounds()
 
-    if non_empty:
-        height = y2 - y1
-        img_width = image.get_width()
-        img_height = image.get_height()
+        if non_empty:
+            height = y2 - y1
+            img_width = image.get_width()
+            img_height = image.get_height()
 
-        if img_height - y2 > 0:
-            Gimp.image_select_rectangle(image, Gimp.ChannelOps.REPLACE,
-                                        0, y2, img_width, img_height - y2)
-            drawable.edit_cut()
-            floating = Gimp.edit_paste(drawable, False)
-            floating.set_offsets(0, y1)
-            Gimp.floating_sel_anchor(floating)
+            if img_height - y2 > 0:
+                Gimp.image_select_rectangle(image, Gimp.ChannelOps.REPLACE,
+                                            0, y2, img_width, img_height - y2)
+                drawable.edit_cut()
+                floating = Gimp.edit_paste(drawable, False)
+                floating.set_offsets(0, y1)
+                Gimp.floating_sel_anchor(floating)
 
-        image.crop(img_width, img_height - height, 0, 0)
+            image.crop(img_width, img_height - height, 0, 0)
 
-    image.selection_none()
+        image.selection_none()
+    except Exception as e:
+        image.undo_group_end()
+        Gimp.message(str(e))
+        return procedure.new_return_values(Gimp.PDBStatusType.EXECUTION_ERROR, GLib.Error())
+
     image.undo_group_end()
     Gimp.displays_flush()
 
