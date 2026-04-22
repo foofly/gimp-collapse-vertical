@@ -13,8 +13,7 @@ def collapse_vertical_run(procedure, run_mode, image, drawables, config, run_dat
     image.undo_group_start()
 
     try:
-        selection = image.get_selection()
-        non_empty, x1, y1, x2, y2 = selection.mask_bounds()
+        _, non_empty, x1, y1, x2, y2 = Gimp.Selection.bounds(image)
 
         if non_empty:
             height = y2 - y1
