@@ -14,7 +14,7 @@ def collapse_vertical_run(procedure, run_mode, image, drawables, config, run_dat
 
     try:
         selection = image.get_selection()
-        non_empty, x1, y1, x2, y2 = selection.bounds()
+        non_empty, x1, y1, x2, y2 = selection.mask_bounds()
 
         if non_empty:
             height = y2 - y1
@@ -31,11 +31,10 @@ def collapse_vertical_run(procedure, run_mode, image, drawables, config, run_dat
 
             image.crop(img_width, img_height - height, 0, 0)
 
-        Gimp.selection_none(image)
+        selection.none()
     except Exception:
         image.undo_group_end()
-        sel_methods = [m for m in dir(image.get_selection()) if not m.startswith('_')]
-        Gimp.message(traceback.format_exc() + '\n\nSelection methods: ' + ', '.join(sel_methods))
+        Gimp.message(traceback.format_exc())
         return procedure.new_return_values(Gimp.PDBStatusType.EXECUTION_ERROR, GLib.Error())
 
     image.undo_group_end()
