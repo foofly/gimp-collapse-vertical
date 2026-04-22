@@ -16,9 +16,21 @@ Select a rectangular horizontal region, run the plugin, and GIMP will:
 
 ## Installation
 
+### Automatic (Linux)
+
+Run the included install script — it detects your GIMP version and installs to the right place automatically, including after GIMP updates:
+
+```bash
+bash install.sh
+```
+
+Restart GIMP. The menu entry will appear under **Filters → Custom → Collapse Vertical**.
+
+### Manual
+
 GIMP 3.x requires each plugin to live in its own subdirectory matching the script name.
 
-### Linux
+#### Linux
 
 ```bash
 mkdir -p ~/.config/GIMP/3.0/plug-ins/fu/
@@ -26,7 +38,7 @@ cp fu.py ~/.config/GIMP/3.0/plug-ins/fu/fu.py
 chmod +x ~/.config/GIMP/3.0/plug-ins/fu/fu.py
 ```
 
-### Linux (Flatpak)
+#### Linux (Flatpak)
 
 ```bash
 mkdir -p ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/
@@ -34,7 +46,7 @@ cp fu.py ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/fu.py
 chmod +x ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/fu.py
 ```
 
-### macOS
+#### macOS
 
 ```bash
 mkdir -p ~/Library/Application\ Support/GIMP/3.0/plug-ins/fu/
@@ -42,11 +54,11 @@ cp fu.py ~/Library/Application\ Support/GIMP/3.0/plug-ins/fu/fu.py
 chmod +x ~/Library/Application\ Support/GIMP/3.0/plug-ins/fu/fu.py
 ```
 
-### Windows
+#### Windows
 
 Create the folder `%APPDATA%\GIMP\3.0\plug-ins\fu\` and copy `fu.py` into it.
 
-### After installing
+#### After installing
 
 Restart GIMP. The menu entry will appear under **Filters → Custom → Collapse Vertical**.
 
