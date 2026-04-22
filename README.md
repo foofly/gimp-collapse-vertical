@@ -40,10 +40,12 @@ chmod +x ~/.config/GIMP/3.0/plug-ins/fu/fu.py
 
 #### Linux (Flatpak)
 
+Flatpak GIMP has home directory access so it uses the same path as a native install:
+
 ```bash
-mkdir -p ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/
-cp fu.py ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/fu.py
-chmod +x ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/fu.py
+mkdir -p ~/.config/GIMP/3.2/plug-ins/fu/
+cp fu.py ~/.config/GIMP/3.2/plug-ins/fu/fu.py
+chmod +x ~/.config/GIMP/3.2/plug-ins/fu/fu.py
 ```
 
 #### macOS
