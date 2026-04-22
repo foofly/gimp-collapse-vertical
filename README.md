@@ -28,19 +28,11 @@ Restart GIMP. The menu entry will appear under **Filters → Custom → Collapse
 
 ### Manual
 
-GIMP 3.x requires each plugin to live in its own subdirectory matching the script name.
+GIMP 3.x requires each plugin to live in its own subdirectory matching the script name. Replace `3.2` below with your actual GIMP version (check **Help → About**).
 
-#### Linux
+#### Linux (native and Flatpak)
 
-```bash
-mkdir -p ~/.config/GIMP/3.0/plug-ins/fu/
-cp fu.py ~/.config/GIMP/3.0/plug-ins/fu/fu.py
-chmod +x ~/.config/GIMP/3.0/plug-ins/fu/fu.py
-```
-
-#### Linux (Flatpak)
-
-Flatpak GIMP has home directory access so it uses the same path as a native install:
+Flatpak GIMP uses the same path as a native install:
 
 ```bash
 mkdir -p ~/.config/GIMP/3.2/plug-ins/fu/
@@ -51,14 +43,14 @@ chmod +x ~/.config/GIMP/3.2/plug-ins/fu/fu.py
 #### macOS
 
 ```bash
-mkdir -p ~/Library/Application\ Support/GIMP/3.0/plug-ins/fu/
-cp fu.py ~/Library/Application\ Support/GIMP/3.0/plug-ins/fu/fu.py
-chmod +x ~/Library/Application\ Support/GIMP/3.0/plug-ins/fu/fu.py
+mkdir -p ~/Library/Application\ Support/GIMP/3.2/plug-ins/fu/
+cp fu.py ~/Library/Application\ Support/GIMP/3.2/plug-ins/fu/fu.py
+chmod +x ~/Library/Application\ Support/GIMP/3.2/plug-ins/fu/fu.py
 ```
 
 #### Windows
 
-Create the folder `%APPDATA%\GIMP\3.0\plug-ins\fu\` and copy `fu.py` into it.
+Create the folder `%APPDATA%\GIMP\3.2\plug-ins\fu\` and copy `fu.py` into it.
 
 #### After installing
 
