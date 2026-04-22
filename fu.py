@@ -31,7 +31,7 @@ def collapse_vertical_run(procedure, run_mode, image, drawables, config, run_dat
 
             image.crop(img_width, img_height - height, 0, 0)
 
-        selection.none()
+        Gimp.Selection.none(image)
     except Exception:
         image.undo_group_end()
         Gimp.message(traceback.format_exc())
