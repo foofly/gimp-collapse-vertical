@@ -29,9 +29,9 @@ chmod +x ~/.config/GIMP/3.0/plug-ins/fu/fu.py
 ### Linux (Flatpak)
 
 ```bash
-mkdir -p ~/.var/app/org.gimp.GIMP/config/GIMP/3.0/plug-ins/fu/
-cp fu.py ~/.var/app/org.gimp.GIMP/config/GIMP/3.0/plug-ins/fu/fu.py
-chmod +x ~/.var/app/org.gimp.GIMP/config/GIMP/3.0/plug-ins/fu/fu.py
+mkdir -p ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/
+cp fu.py ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/fu.py
+chmod +x ~/.var/app/org.gimp.GIMP/config/GIMP/3.2/plug-ins/fu/fu.py
 ```
 
 ### macOS
