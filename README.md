@@ -31,6 +31,22 @@ Select a rectangular horizontal region, run the plugin, and GIMP will:
    ```
 3. Restart GIMP (or use **Filters → Script-Fu → Refresh Scripts** if GIMP is already open).
 
+### Linux Flatpak
+
+If you installed GIMP via Flatpak, the plug-ins folder is sandboxed under your home directory:
+
+```bash
+mkdir -p ~/.var/app/org.gimp.GIMP/config/GIMP/2.10/plug-ins/
+cp fu.py ~/.var/app/org.gimp.GIMP/config/GIMP/2.10/plug-ins/
+chmod +x ~/.var/app/org.gimp.GIMP/config/GIMP/2.10/plug-ins/fu.py
+```
+
+For GIMP 3.x via Flatpak, replace `2.10` with `3.0`. You can check your version with:
+
+```bash
+flatpak info org.gimp.GIMP | grep version
+```
+
 ## Usage
 
 1. Open an image in GIMP.
